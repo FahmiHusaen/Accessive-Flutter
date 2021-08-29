@@ -1,11 +1,39 @@
-class Places{
-  final String placeId;
-  final String placeName;
-  final String categoryName;
-  final String address;
-  final String phone;
-  final String website;
 
-  Places(this.placeId, this.placeName, this.categoryName, this.address, this.phone, this.website);
+class Place{
+  String? placeId;
+  String? placeTitle;
+  String? categoryTitle;
+  String? address;
+  String? phone;
+  String? website;
+  int? distance;
+  String? coverPhotoUrl;
+  double? latitude;
+  double? longitude;
+
+  Place({
+    this.placeId,
+    this.placeTitle,
+    this.categoryTitle,
+    this.address,
+    this.phone,
+    this.website,
+    this.distance,
+    this.coverPhotoUrl,
+    this.latitude,
+    this.longitude
+  });
+
+  Place.fromJson(Map<String, dynamic> json){
+    placeId = json['placeId'];
+    placeTitle = json['placeTitle'];
+    categoryTitle = json['categoryTitle'];
+    address = json['address'];
+    phone = json['phone'];
+    website = json['website'];
+    distance = json['distance'];
+    latitude = json['latitude'];
+    longitude = json['longitude'];
+  }
 
 }

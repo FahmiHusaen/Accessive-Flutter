@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'Collection/collectionPage.dart';
+import 'Components/Constants.dart';
 import 'Explorer/explorePage.dart';
 import 'Explorer/placeDetailPage.dart';
 import 'TabNavigatorRoutes.dart';
@@ -122,7 +123,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
+        selectedItemColor: kPrimaryColor,
         onTap: (int index) { _selectTab(pageKeys[index], index); },
       ),
     );

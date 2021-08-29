@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'MainNavigation.dart';
-import 'Welcome/welcome_screen.dart';
+import 'Splash.dart';
+import 'Welcome/WelcomeScreen.dart';
 
 
 void main() => runApp(
@@ -17,9 +18,10 @@ class AccessiveApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: _title,
-      home: MainNavigation()
+      home: //MainNavigation()
       //placeDetailPage()
         //WelcomeScreen()
+      Splash()
       ,
       debugShowCheckedModeBanner: false,
     );

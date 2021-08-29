@@ -1,32 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_appbb/Model/PlaceFacility.dart';
+import 'package:flutter_appbb/DummyData.dart';
+import 'package:flutter_appbb/Model/Facility.dart';
 
 import '../Model/Places.dart';
 
 class RecommendPlaceListItem extends StatelessWidget{
-  final Places? places;
+  final Place? place;
   final Function? press;
 
-  List<PlaceFacility> placeFacilityList = [
-    PlaceFacility(placeFacilityId: "xxx01", facilityTypeName: "Ramp",
-        facilityTypeAvailableIcon: "https://firebasestorage.googleapis.com/v0/b/accessive-655f9.appspot.com/o/Access%20Facility%20Icon%2FRamp%20Icon.png?alt=media&token=b2b20116-2dac-4f08-b193-7e0cc982b740",
-        facilityTypeDesc: "Derajat bidang miring 30 derajat dengan lebar minimal 750 mm"),
-    PlaceFacility(placeFacilityId: "xxx02", facilityTypeName: "Elevator",
-        facilityTypeAvailableIcon: "https://firebasestorage.googleapis.com/v0/b/accessive-655f9.appspot.com/o/Access%20Facility%20Icon%2FElevator%20Icon.png?alt=media&token=52e9f3ad-e55a-4631-9737-a274d29371b5",
-        facilityTypeDesc: "Ruang manuver 150 x 150 cm"),
-    PlaceFacility(placeFacilityId: "xxx01", facilityTypeName: "Toilet Aksesibel",
-        facilityTypeAvailableIcon: "https://firebasestorage.googleapis.com/v0/b/accessive-655f9.appspot.com/o/Access%20Facility%20Icon%2FRamp%20Icon.png?alt=media&token=b2b20116-2dac-4f08-b193-7e0cc982b740",
-        facilityTypeDesc: "Toilet yang dapat diakses dengan akses tanpa tangga dan ruang manuver 150cm x 150cm. Lebar bukaan pintu minimal 75cm. Ruang transfer dengan rel dropdown tersedia dan rel pegangan yang dipasang di dinding di kedua sisi toilet."
-    ),
-    PlaceFacility(placeFacilityId: "xxx02", facilityTypeName: "Tampat Parkir",
-        facilityTypeAvailableIcon: "https://firebasestorage.googleapis.com/v0/b/accessive-655f9.appspot.com/o/Access%20Facility%20Icon%2FElevator%20Icon.png?alt=media&token=52e9f3ad-e55a-4631-9737-a274d29371b5",
-        facilityTypeDesc: "Parkir dalam, memiliki kapasitas beberapa kendaraan roda 4 / memiliki tanda biru khusus disabilitas."
-    ),
-  ];
+  List<Facility> placeFacilityList = PlaceFacilityFilterDummyList;
 
   RecommendPlaceListItem({
     Key? key,
-    this.places,
+    this.place,
     this.press,
   }) : super(key: key);
 
@@ -70,7 +56,7 @@ class RecommendPlaceListItem extends StatelessWidget{
                               Row(
                                   children: [
                                     Text(
-                                      places!.placeName,
+                                      place!.placeTitle!,
                                       style: new TextStyle(fontSize: 16.0),
                                     ),
                                     Spacer(),
@@ -81,11 +67,11 @@ class RecommendPlaceListItem extends StatelessWidget{
                                   ]
                               ),
                               Text(
-                                places!.categoryName,
+                                place!.categoryTitle!,
                                 style: new TextStyle(fontSize: 14.0),
                               ),
                               Text(
-                                places!.address,
+                                place!.address!,
                                 style: new TextStyle(fontSize: 14.0),
                               ),
                               Row(
@@ -115,15 +101,15 @@ class RecommendPlaceListItem extends StatelessWidget{
     );
   }
 
-  Widget buildPlaceFacilityReviewList(BuildContext context, index, List<PlaceFacility> placeFacilityList) {
-    PlaceFacility placeFacility = placeFacilityList[index];
+  Widget buildPlaceFacilityReviewList(BuildContext context, index, List<Facility> placeFacilityList) {
+    Facility placeFacility = placeFacilityList[index];
     return new Container(
       child: Padding(
           padding: const EdgeInsets.only(right: 5, top: 5),
             child: Row(
                 children: <Widget>[
                   Image.network(
-                    placeFacility.facilityTypeAvailableIcon!,
+                    placeFacility.facilityTypeIcon!,
                     height: 40,
                     width: 40,
                     fit: BoxFit.fill,

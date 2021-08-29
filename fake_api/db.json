@@ -1,0 +1,112 @@
+{
+    "posts": [
+      { "id": 1, "title": "json-server", "author": "typicode" }
+    ],
+    "comments": [
+      { "id": 1, "body": "some comment", "postId": 1 }
+    ],
+    "profile": { "name": "typicode" }
+    ,
+    "category-home": [
+        { "categoryId": 1, "categoryTitle": "Rumah Sakit", "categoryCode": "xc01", "author": "typicode" },
+        { "categoryId": 2, "categoryTitle": "Restoran", "categoryCode": "xc09", "author": "typicode" },
+        { "categoryId": 3, "categoryTitle": "Toko", "categoryCode": "xc11", "author": "typicode" },
+        { "categoryId": 4, "categoryTitle": "Tempat Wisata", "categoryCode": "xc12", "author": "typicode" },
+        { "categoryId": 5, "categoryTitle": "Universitas", "categoryCode": "xc13", "author": "typicode" },
+        { "categoryId": 6, "categoryTitle": "Museum", "categoryCode": "xc14", "author": "typicode" },
+        { "categoryId": 7, "categoryTitle": "SPBU", "categoryCode": "xc06", "author": "typicode" },
+        { "categoryId": 8, "categoryTitle": "ATM", "categoryCode": "xc07", "author": "typicode" },
+        { "categoryId": 9, "categoryTitle": "Hotel", "categoryCode": "xc08", "author": "typicode" }
+      ],
+      "category-all": [
+        { 
+          "categoryTypeId": 1, 
+          "categoryTypeTitle": "Layanan Publik", 
+          "categoryList": [
+            { "categoryId": 1, "categoryTitle": "Rumah Sakit", "categoryCode": "xc01","author": "typicode" },
+            { "categoryId": 2, "categoryTitle": "Instansi Pemerintahan", "categoryCode": "xc02", "author": "typicode" },
+            { "categoryId": 3, "categoryTitle": "Terminal", "categoryCode": "xc03", "author": "typicode" },
+            { "categoryId": 4, "categoryTitle": "Bandara", "categoryCode": "xc04", "author": "typicode" },
+            { "categoryId": 5, "categoryTitle": "Stasiun", "categoryCode": "xc05", "author": "typicode" },
+            { "categoryId": 6, "categoryTitle": "SPBU", "categoryCode": "xc06", "author": "typicode" },
+            { "categoryId": 7, "categoryTitle": "ATM", "categoryCode": "xc07", "author": "typicode" },
+            { "categoryId": 8, "categoryTitle": "Hotel", "categoryCode": "xc08", "author": "typicode" }
+          ] 
+        },
+        { 
+          "categoryTypeId": 2, 
+          "categoryTypeTitle": "Makanan dan Minuman", 
+          "categoryList": [
+            { "categoryId": 10, "categoryTitle": "Restoran", "categoryCode": "xc09", "author": "typicode" },
+            { "categoryId": 11, "categoryTitle": "Cafe", "categoryCode": "xc10", "author": "typicode" }
+          ] 
+        },
+        { 
+          "categoryTypeId": 3, 
+          "categoryTypeTitle": "Belanja", 
+          "categoryList": [
+            { "categoryId": 12, "categoryTitle": "Toko", "categoryCode": "xc11", "author": "typicode" }
+          ] 
+        },
+        { 
+          "categoryTypeId": 4, 
+          "categoryTypeTitle": "Aktivitas", 
+          "categoryList": [
+            { "categoryId": 13, "categoryTitle": "Tempat Wisata", "categoryCode": "xc12", "author": "typicode" },
+            { "categoryId": 14, "categoryTitle": "Universitas", "categoryCode": "xc13", "author": "typicode" },
+            { "categoryId": 15, "categoryTitle": "Museum", "categoryCode": "xc14", "author": "typicode" }
+          ] 
+        }
+      ],
+      "category-all-filter": [
+        { "categoryId": 1, "categoryTitle": "Rumah Sakit", "categoryCode": "xc01","author": "typicode" },
+        { "categoryId": 2, "categoryTitle": "Instansi Pemerintahan", "categoryCode": "xc02", "author": "typicode" },
+        { "categoryId": 3, "categoryTitle": "Terminal", "categoryCode": "xc03", "author": "typicode" },
+        { "categoryId": 4, "categoryTitle": "Bandara", "categoryCode": "xc04", "author": "typicode" },
+        { "categoryId": 5, "categoryTitle": "Stasiun", "categoryCode": "xc05", "author": "typicode" },
+        { "categoryId": 6, "categoryTitle": "SPBU", "categoryCode": "xc06", "author": "typicode" },
+        { "categoryId": 7, "categoryTitle": "ATM", "categoryCode": "xc07", "author": "typicode" },
+        { "categoryId": 8, "categoryTitle": "Hotel", "categoryCode": "xc08", "author": "typicode" },
+        { "categoryId": 10, "categoryTitle": "Restoran", "categoryCode": "xc09", "author": "typicode" },
+        { "categoryId": 11, "categoryTitle": "Cafe", "categoryCode": "xc10", "author": "typicode" },
+        { "categoryId": 12, "categoryTitle": "Toko", "categoryCode": "xc11", "author": "typicode" },
+        { "categoryId": 13, "categoryTitle": "Tempat Wisata", "categoryCode": "xc12", "author": "typicode" },
+        { "categoryId": 14, "categoryTitle": "Universitas", "categoryCode": "xc13", "author": "typicode" },
+        { "categoryId": 15, "categoryTitle": "Museum", "categoryCode": "xc14", "author": "typicode" }
+      ],
+      "login":
+        { 
+            "accessToken": "393a4290-11a0-44b0-9949-0b371a2a6772",
+            "loginStatus": "OK",
+            "userData": {
+                "userId" : "002c60e3-9e50-497a-b784-c5b6ab6136c3",
+                "userName" : "Fahm18",
+                "email" : "muhfahmihusaen@gmail.com",
+                "userType" : "public"
+            }
+        },
+      "search":[
+        {
+          "placeId": "b745553e-abc6-41fa-a158-7c37f1b3600b",
+          "placeTitle": "Universitas Gadjah Mada",
+          "categoryTitle": "Universitas",
+          "address": "Bulaksumur, Caturtunggal, Kec. Depok, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281",
+          "phone": "(0274) 588688",
+          "website": "ugm.ac.id",
+          "distance": 23,
+          "latitude": -7.767871,
+          "longitude": 110.378229
+        },
+        {
+          "placeId": "b745553e-abc6-41fa-a158-7c37f1b3600b",
+          "placeTitle": "Upnormal Coffee Roasters Kaliurang",
+          "categoryTitle": "Cafe",
+          "address": "Jl. Kaliurang KM.5,6, Manggung, Caturtunggal, Kec. Depok, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281",
+          "phone": "+628112131173",
+          "website": null,
+          "distance": 12,
+          "latitude": -7.757009,
+          "longitude": 110.382921
+        }
+      ]
+  }

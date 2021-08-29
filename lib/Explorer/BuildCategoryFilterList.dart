@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_appbb/Model/placeCategory.dart';
+import 'package:flutter_appbb/Model/Category.dart';
 
 class BuildCategoryFilterList extends StatelessWidget{
-  final PlaceCategory? placeCategory;
+  final Category? placeCategory;
   final VoidCallback? onClicked;
   final BuildContext? context;
 
@@ -36,7 +36,7 @@ class BuildCategoryFilterList extends StatelessWidget{
                             width: 10.0,
                           ),
                           Text(
-                            placeCategory!.categoryName!,
+                            placeCategory!.categoryTitle!,
                             style: new TextStyle(fontSize: 16.0),
                           ),
                           Spacer(),

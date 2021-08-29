@@ -1,23 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_appbb/Components/RegularAppBar.dart';
+import 'package:flutter_appbb/DummyData.dart';
 import 'package:flutter_appbb/Explorer/PlaceSearchResultListItem.dart';
 import 'package:flutter_appbb/Explorer/placeDetailPage.dart';
+import 'package:flutter_appbb/Model/Facility.dart';
 import 'package:flutter_appbb/Model/Places.dart';
+import 'package:flutter_appbb/Model/Guide.dart';
 
 class collectionPage extends StatelessWidget{
 
-  final List<Places> placeList = [
-    Places("xxx01", "Universitas Gadjah Mada", "Universitas",
-        "Bulaksumur, Yogyakarta", "081215747812", "ugm.ac.id"),
-    Places("xxx02", "Warunk Upnormal", "Cafe", "Jl. Pandega Marta, Yogyakarta", "081215747812", "ugm.ac.id"),
-    Places("xxx03", "Rumah Sakit UGM", "Rumah Sakit",
-        "Kronggahan, Gamping, Sleman, Yogyakarta", "081215747812", "ugm.ac.id"),
-  ];
+  final List<Place> placeList = placeDummyList;
+  List<List<Facility>> placeFacilityList = RealFacilityDummyList;
+  List<List<Guide>> placeGuideList = GuideDummyList;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: regularAppBar(title: "Koleksi Tempat", isFirstPage: true,),
+        appBar: RegularAppBar(title: "Koleksi Tempat", isFirstPage: true,),
         body: SizedBox.expand(
           child: Stack(
             children: <Widget>[
@@ -42,11 +41,13 @@ class collectionPage extends StatelessWidget{
   }
 
   Widget buildPlaceList(BuildContext context, int index) {
-    final places = placeList[index];
+    final place = placeList[index];
+    final facilityList = placeFacilityList[index];
+    final guideList = placeGuideList[index];
     return PlaceSearchResultListItem(
-        places: places, isCollection: true, press: (){
+        place: place, isCollection: true, placeFacilityList: facilityList, press: (){
       Navigator.push(context, MaterialPageRoute(builder: (context) {
-        return placeDetailPage(places);
+        return placeDetailPage(place, facilityList, guideList);
         //return placeDetailPage();
       }));
     });

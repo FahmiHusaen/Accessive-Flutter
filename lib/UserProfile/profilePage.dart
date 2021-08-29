@@ -1,14 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_appbb/Components/RegularAppBar.dart';
+import 'package:flutter_appbb/Login/login_screen.dart';
 import 'package:flutter_appbb/UserProfile/ProfileDetailContainer.dart';
 import 'package:flutter_appbb/UserProfile/profileEditPage.dart';
-import 'package:flutter_appbb/Welcome/welcome_screen.dart';
+import 'package:flutter_appbb/Welcome/WelcomeScreen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class profilePage extends StatelessWidget{
+
+  logOut(context) async{
+    final prefs = await SharedPreferences.getInstance();
+    prefs.setBool('loginStatus', false);
+    Navigator.of(context, rootNavigator: true).pushReplacement(MaterialPageRoute(builder: (context) => new LoginScreen()));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:  regularAppBar(title: "Profil Pengguna", isFirstPage: true),
+      appBar:  RegularAppBar(title: "Profil Pengguna", isFirstPage: true),
       body: Column(
           children: <Widget>[
             ProfileDetailContainer(
@@ -128,7 +137,7 @@ class profilePage extends StatelessWidget{
                             ]
                         ),
                         onTap: (){
-                          Navigator.of(context, rootNavigator: true).pushReplacement(MaterialPageRoute(builder: (context) => new WelcomeScreen()));
+                          logOut(context);
                         },
                       ),
                     ]

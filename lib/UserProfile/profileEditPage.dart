@@ -7,7 +7,7 @@ class profileEditPage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:  regularAppBar(title: "Profil Pengguna", isFirstPage: false),
+      appBar:  RegularAppBar(title: "Profil Pengguna", isFirstPage: false),
       body: Column(
           children: <Widget>[
             ProfileDetailContainer(

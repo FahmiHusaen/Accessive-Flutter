@@ -8,12 +8,14 @@ class searchAppBar extends StatelessWidget implements PreferredSizeWidget{
   bool? isFirstPage = false;
   double? height = 120;
   final ValueChanged<String>? submitted;
+  final TextEditingController? textSearchController;
 
   searchAppBar({
     Key? key,
     //this.currentKey,
     this.isFirstPage,
     this.submitted,
+    this.textSearchController
   }) : super(key: key);
 
   @override
@@ -59,7 +61,11 @@ class searchAppBar extends StatelessWidget implements PreferredSizeWidget{
               preferredSize: Size.fromHeight(60.0),
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 10),
-                child: RoundedInputField(icon: Icons.search, onSubmitted: submitted),
+                child: RoundedInputField(
+                  icon: Icons.search,
+                  onSubmitted: submitted,
+                  controller: textSearchController,
+                ),
               )
           ),
         ),

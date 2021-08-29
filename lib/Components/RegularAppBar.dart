@@ -5,12 +5,12 @@ import 'package:flutter/material.dart';
 
 import '../Explorer/searchResultPage.dart';
 
-class regularAppBar extends StatelessWidget implements PreferredSizeWidget{
+class RegularAppBar extends StatelessWidget implements PreferredSizeWidget{
   String? title;
   bool? isFirstPage = false;
   double height = 60;
 
-  regularAppBar({
+  RegularAppBar({
     Key? key,
     this.title,
     this.isFirstPage,

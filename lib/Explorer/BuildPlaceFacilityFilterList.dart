@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_appbb/Model/PlaceFacility.dart';
+import 'package:flutter_appbb/Model/Facility.dart';
 
 import 'PlaceFacilityDescDialog.dart';
 
 class BuildPlaceFacilityFilterList extends StatelessWidget{
-  final PlaceFacility? placeFacility;
+  final Facility? facility;
   final VoidCallback? onClicked;
   final BuildContext? context;
 
   const BuildPlaceFacilityFilterList({
     Key? key,
-    this.placeFacility,
+    this.facility,
     this.onClicked,
     this.context
   }) : super(key: key);
@@ -31,14 +31,14 @@ class BuildPlaceFacilityFilterList extends StatelessWidget{
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Checkbox(
-                            value: placeFacility!.isChecked,
+                            value: facility!.isChecked,
                             onChanged: (value) => onClicked!(),
                           ),
                           SizedBox(
                             width: 10.0,
                           ),
                           Image.network(
-                            placeFacility!.facilityTypeAvailableIcon!,
+                            facility!.facilityTypeIcon!,
                             height: 60,
                             width: 60,
                             fit: BoxFit.fill,
@@ -47,7 +47,7 @@ class BuildPlaceFacilityFilterList extends StatelessWidget{
                             width: 10.0,
                           ),
                           Text(
-                            placeFacility!.facilityTypeName!,
+                            facility!.facilityTypeTitle!,
                             style: new TextStyle(fontSize: 16.0),
                           ),
                           Spacer(),
@@ -64,9 +64,9 @@ class BuildPlaceFacilityFilterList extends StatelessWidget{
                       showDialog(
                         builder: (context) {
                           return PlaceFacilityDescDialog(
-                            facilityTypeAvailableIcon: placeFacility!.facilityTypeAvailableIcon,
-                            facilityTypeName: placeFacility!.facilityTypeName,
-                            facilityTypeDesc: placeFacility!.facilityTypeDesc,);
+                            facilityTypeAvailableIcon: facility!.facilityTypeIcon,
+                            facilityTypeName: facility!.facilityTypeTitle,
+                            facilityTypeDesc: facility!.facilityTypeDesc,);
                         }, context: context,
                       );
                     },
